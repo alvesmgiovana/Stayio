@@ -1,0 +1,2 @@
+# PROJETO A3 - USABILIDADE, DESENVOLVIMENTO WEB, MOBILE E JOGOS
+O projeto consiste no desenvolvimento de um site para locação temporária de imóveis, voltado para pessoas que buscam acomodações durante viagens a lazer ou trabalho.
