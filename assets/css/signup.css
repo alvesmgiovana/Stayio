@@ -22,7 +22,7 @@ body {
 }
 
 .card {
-  background-color: #ffffff80;
+  background-color: #ffffffd8;
   padding: 30px;
   border-radius: 4%;
   box-shadow: 3px 3px 1px 0px #00000060;
@@ -78,7 +78,7 @@ h1{
   color: #4038a0
 }
 
-button{
+button {
   background-color: transparent;
   border-color: #0d009c;
   color: #0d009c;
@@ -90,6 +90,7 @@ button{
   cursor: pointer;
   outline: none;
   transition: all .4s ease-out;
+  width: 100px;
 }
 
 button:hover{

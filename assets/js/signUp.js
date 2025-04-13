@@ -110,6 +110,10 @@ function cadastrar(){
   }
 }
 
+function voltar() {
+  window.location.href = '../html/signin.html'
+}
+
 btn.addEventListener('click', ()=>{
   let inputSenha = document.querySelector('#senha')
   
