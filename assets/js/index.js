@@ -3,7 +3,7 @@ if (localStorage.getItem("token") == null) {
     window.location.href = "./assets/html/signin.html";
 }
 
-let userLogado = JSON.parte(localStorage.getItem("userLogado"));
+let userLogado = JSON.parse(localStorage.getItem("userLogado"));
 
 let logado = document.querySelector("#logado");
 logado.innerHTML = `Olá ${userLogado.nome}`;

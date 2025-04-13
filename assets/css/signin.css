@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url("../images/bg-signin.jpg");
+    background-image: url("../images/signInBg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
