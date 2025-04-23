@@ -6,9 +6,13 @@ let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
 let validNome = false
 
-let usuario = document.querySelector('#usuario')
-let labelUsuario = document.querySelector('#labelUsuario')
-let validUsuario = false
+let cpf = document.querySelector('#cpf')
+let labelCpf = document.querySelector('#labelCpf')
+let validCpf = false
+
+let email = document.querySelector('#email')
+let labelemail = document.querySelector('#labelemail')
+let validemail = false
 
 let senha = document.querySelector('#senha')
 let labelSenha = document.querySelector('#labelSenha')
@@ -35,17 +39,36 @@ nome.addEventListener('keyup', () => {
   }
 })
 
-usuario.addEventListener('keyup', () => {
-  if(usuario.value.length <= 4){
-    labelUsuario.setAttribute('style', 'color: red')
-    labelUsuario.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
-    usuario.setAttribute('style', 'border-color: red')
-    validUsuario = false
+cpf.addEventListener('keyup', () => {
+  if(cpf.value.length < 11){
+    labelCpf.setAttribute('style', 'color: red')
+    labelCpf.innerHTML = 'cpf *Insira todos os digitos do seu CPF'
+    cpf.setAttribute('style', 'border-color: red')
+    validCpf = false
+  } else if(cpf.value.length > 11){
+    labelCpf.setAttribute('style', 'color: red')
+    labelCpf.innerHTML = 'cpf *Insira apenas os números do seu CPF'
+    cpf.setAttribute('style', 'border-color: red')
+    validCpf = false
+  } else{
+    labelCpf.setAttribute('style', 'color: green')
+    labelCpf.innerHTML = 'CPF'
+    cpf.setAttribute('style','border-color: green')
+    validCpf = true
+  }
+})
+
+email.addEventListener('keyup', () => {
+  if(email.value.length <= 4){
+    labelemail.setAttribute('style', 'color: red')
+    labelemail.innerHTML = 'E-mail inválido'
+    email.setAttribute('style', 'border-color: red')
+    validemail = false
   } else {
-    labelUsuario.setAttribute('style', 'color: green')
-    labelUsuario.innerHTML = 'Usuário'
-    usuario.setAttribute('style', 'border-color: green')
-    validUsuario = true
+    labelemail.setAttribute('style', 'color: green')
+    labelemail.innerHTML = 'E-mail'
+    email.setAttribute('style', 'border-color: green')
+    validemail = true
   }
 })
 
@@ -78,13 +101,13 @@ confirmSenha.addEventListener('keyup', () => {
 })
 
 function cadastrar(){
-  if(validNome && validUsuario && validSenha && validConfirmSenha){
+  if(validNome && validCpf && validemail && validSenha && validConfirmSenha){
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
     
     listaUser.push(
     {
       nomeCad: nome.value,
-      userCad: usuario.value,
+      emailCad: email.value,
       senhaCad: senha.value
     }
     )
